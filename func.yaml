@@ -1,20 +1,20 @@
 specVersion: 0.35.0
 name: hello
-runtime: go
+runtime: node
 registry: docker.io/marcosnils
 image: docker.io/marcosnils/hello:latest
-imageDigest: sha256:850d558cea372083300b5793c39ef0bf980a932175ba0137cd6091981563cab8
+imageDigest: sha256:9e8c179afc27fab4f06670a6b08dfdd2a511c8aee7d05ea5e3174d859fecd3e7
 created: 2023-03-04T16:40:03.865086689-03:00
-build: git                                          # required, specify `git` build type
-git:
-  url: https://github.com/marcosnils/my-function.git   # required, git repository with the function source code
-  revision: main
+build:
+  buildpacks: []
+  builder: pack
+  buildEnvs: []
 run:
   volumes: []
   envs: []
 deploy:
   namespace: ""
-  remote: false
+  remote: true
   annotations: {}
   options: {}
   labels: []
